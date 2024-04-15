@@ -21,20 +21,22 @@ import Success from './shared/components/Success.vue';
  */
 
 const app = createApp(App);
-app.use(router);
-app.use(Vuex);
-
-const store = new Vuex.Store(storeDefinition);
-app.use(store);
-async function beforeCreate($store) {
-    $store.dispatch('loadStoredState');
-}
-app.use(beforeCreate);
 
 app.component('star-rating', StarRating);
 app.component('fatal-error', FatalError);
 app.component('v-errors', ValdationErrors);
 app.component('success', Success);
+
+app.use(router);
+app.use(Vuex);
+
+const store = new Vuex.Store(storeDefinition);
+app.use(store);
+// async function beforeCreate(store) {
+//     store.dispatch('loadStoredState');
+// }
+// app.use(beforeCreate);
+
 
 
 // import ExampleComponent from './components/ExampleComponent.vue';
@@ -59,3 +61,4 @@ app.component('success', Success);
  */
 
 app.mount('#app');
+

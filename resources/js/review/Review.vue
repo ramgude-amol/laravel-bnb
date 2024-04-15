@@ -3,7 +3,7 @@
         <success v-if="success">You've left a review, thank you very much!</success>
         <fatal-error v-if="error">Unknown error</fatal-error>
         <div v-if="!success && !error">
-            <div :class="[{ 'col-md-4': twoColumn }, { 'd-none': onceColumn }]">
+            <div :class="[{ 'col-md-4':  onceColumn}]">
                 <div class="card">
                     <div class="card-body">
                         <div v-if="loading"> Loading..</div>
@@ -17,7 +17,7 @@
                     </div>
                 </div>
             </div>
-            <div :class="[{ 'col-md-8': twoColumn }, { 'col-mod-12': onceColumn }]">
+            <div :class="[{ 'col-md-8': onceColumn }, { 'col-mod-12': twoColumn }]">
                 <div v-if="loading"> Loading..</div>
                 <div v-else>
                     <div v-if="alreadyReviewed">

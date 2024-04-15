@@ -1,9 +1,9 @@
 <template>
     <div class="d-flex">
-        <i class="fas fa-star" v-for="star in fullStar" :key="'full' + star"
+        <i class="fa fa-star" v-for="star in fullStar" :key="'full' + star"
             @click="$emit('rating-changed', star)"></i>
-        <i class="fas fa-star-half-alt" v-if="halfStar"></i>
-        <i class="far fa-star" v-for="star in emptyStar" :key="'empty' + star"
+        <i class="fa fa-star-half" v-if="halfStar"></i>
+        <i class="fa fa-star-o" v-for="star in emptyStar" :key="'empty' + star"
             @click="$emit('rating-changed', fullStar + star)"></i>
     </div>
 </template>
